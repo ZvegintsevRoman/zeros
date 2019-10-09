@@ -5,9 +5,7 @@ module.exports = function zeros(expression) {
 
   expression.split('*').map(str => str.endsWith('!!') ? twoStepFactorial.push(str.slice(0, -2)) : oneStepFactorial.push(str.slice(0, -1)));
   
-  if (twoStepFactorial.every(item => item % 2 != 0) && !oneStepFactorial.length) {
-    twoStepFactorial = [];
-  }
+  if (twoStepFactorial.every(item => item % 2 != 0) && !oneStepFactorial.length) twoStepFactorial = [];
 
   function countZeros(num, step) {     
     for (num; num > 0; num -= step) {
