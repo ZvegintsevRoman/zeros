@@ -8,8 +8,14 @@ module.exports = function zeros(expression) {
   
   function countZeros(num, step) {     
     for (num; num > 0; num -= step) {      
-      if (num % 25 === 0) fives++;
-      if (num % 5 === 0) fives++;      
+      let base = 5;
+      while (base <= num) {
+        if (num % base === 0) {
+          fives++;
+        }
+        base *= 5;
+      }   
+      base = 5;   
       if (num % 2 === 0) twos++; 
     }     
   }  
